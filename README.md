@@ -1,6 +1,6 @@
 # Dynamic Form - User Management
 
-A responsive React app for managing users with CRUD operations, form validation, and mock API.
+A responsive React application for managing users with full CRUD operations, dynamic forms, and real-time validation using a hosted mock REST API powered by MockAPI.
 
 ## 🚀 Live Demo
 
@@ -13,7 +13,6 @@ A responsive React app for managing users with CRUD operations, form validation,
 - ✅ Responsive mobile design
 - ✅ Pagination (6 items/page)
 - ✅ Modal-based forms
-- ✅ Mock API with json-server
 - ✅ Extensible field system (easily add new fields)
 
 ## Tech Stack
@@ -22,31 +21,32 @@ A responsive React app for managing users with CRUD operations, form validation,
 - Material-UI (MUI)
 - React Query (TanStack)
 - Axios
-- json-server
+- MockAPI (Hosted Mock REST API)
 
 ## Installation
 
 ```bash
 npm install
-npm install -g json-server
 ```
 
-## Running
+## Environment configuration
 
-**Terminal 1 - Mock API:**
+Create a .env file in the project root:
 
 ```bash
-npm run mock-api
+VITE_API_URL=https://69871a158bacd1d773ec8a2e.mockapi.io/v1
 ```
 
-**Terminal 2 - React App:**
+Restart the dev server after updating environment variables.
+
+## Run the application
 
 ```bash
 npm run dev
 ```
 
 App: `http://localhost:5173`
-API: `http://localhost:3001`
+Backend: MockAPI (cloud-hosted)
 
 ## Project Structure
 
@@ -93,18 +93,6 @@ src/
 - Desktop: 6 items/page
 - Adaptive spacing & typography
 - Touch-friendly buttons
-
-## Database
-
-`db.json` - 10 dummy users included
-
-## Commands
-
-```bash
-npm run dev        # Start dev server
-npm run build      # Build for production
-npm run mock-api   # Start json-server
-```
 
 ## Adding New Fields
 
@@ -222,24 +210,9 @@ const handleSave = () => {
 };
 ```
 
-### Step 7: Update Database
+### Step 7: Update Backend (MockAPI)
 
-```json
-// db.json
-{
-  "users": [
-    {
-      "id": "1",
-      "firstName": "John",
-      "lastName": "Doe",
-      "phone": "9876543210",
-      "email": "john@example.com",
-      "dateOfBirth": "1990-05-15",
-      "address": "123 Main Street, New York"
-    }
-  ]
-}
-```
+Update the MockAPI resource schema to include the new fields.
 
 ### Step 8: Update UI Display (Optional)
 
@@ -269,7 +242,5 @@ const handleSave = () => {
 4. ✅ Add validation rules (if needed)
 5. ✅ Add to `useEffect` form setup
 6. ✅ Add to `handleSave` user object
-7. ✅ Update database schema (db.json)
+7. ✅ Update MockAPI schema
 8. ✅ Update UI display (optional)
-
-**Service & API automatically handle new fields!**
