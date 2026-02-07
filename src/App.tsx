@@ -1,7 +1,8 @@
 import "./App.css";
+import Home from "./page/home";
 
 function App() {
-  return <>dynamic form</>;
+  return <Home />;
 }
 
 export default App;
